@@ -46,9 +46,9 @@ func main() {
 			return nil
 		}
 
-		fh, err := os.Stat(path)
-		if err != nil {
-			fmt.Println(err)
+		fh, err2 := os.Stat(path)
+		if err2 != nil {
+			fmt.Println(err2)
 			return nil
 		}
 
@@ -65,7 +65,7 @@ func main() {
 	}
 
 	keys := []string{}
-	for k, _ := range sizes {
+	for k := range sizes {
 		keys = append(keys, k)
 	}
 	slices.Sort(keys)
