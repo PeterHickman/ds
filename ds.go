@@ -48,7 +48,6 @@ func main() {
 
 		fh, err2 := os.Stat(path)
 		if err2 != nil {
-			fmt.Println(err2)
 			return nil
 		}
 
