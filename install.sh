@@ -1,12 +1,13 @@
 #!/bin/sh
 
 BINARY='/usr/local/bin'
+APP=ds
 
-echo "Building ds"
-go build ds.go
+echo "Building $APP"
+go build -ldflags="-s -w" $APP.go
 
-echo "Installing ds to $BINARY"
-install -v ds $BINARY
+echo "Installing $APP to $BINARY"
+install $APP $BINARY
 
 echo "Removing the build"
-rm ds
+rm $APP
